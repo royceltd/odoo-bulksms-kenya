@@ -5,7 +5,11 @@
       <change afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/__manifest__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/models/apikeys.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/models/sendids.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/models/sendtext.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/models/senttext.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/views/config.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,5 +69,27 @@
       <updated>1610615741388</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="377" y="180" width="593" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610627400359">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state x="377" y="180" width="593" height="396" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1366.702@0.27.1366.702" timestamp="1610627400359" />
+    <state width="1323" height="149" key="GridCell.Tab.0.bottom" timestamp="1610622127467">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state width="1323" height="149" key="GridCell.Tab.0.bottom/0.27.1366.702@0.27.1366.702" timestamp="1610622127467" />
+    <state width="1323" height="149" key="GridCell.Tab.0.center" timestamp="1610622127466">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state width="1323" height="149" key="GridCell.Tab.0.center/0.27.1366.702@0.27.1366.702" timestamp="1610622127466" />
+    <state width="1323" height="149" key="GridCell.Tab.0.left" timestamp="1610622127465">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state width="1323" height="149" key="GridCell.Tab.0.left/0.27.1366.702@0.27.1366.702" timestamp="1610622127465" />
+    <state width="1323" height="149" key="GridCell.Tab.0.right" timestamp="1610622127466">
+      <screen x="0" y="27" width="1366" height="702" />
+    </state>
+    <state width="1323" height="149" key="GridCell.Tab.0.right/0.27.1366.702@0.27.1366.702" timestamp="1610622127466" />
   </component>
 </project>
