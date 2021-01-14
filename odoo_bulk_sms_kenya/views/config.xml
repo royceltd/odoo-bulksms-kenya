@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+        <record id="send_text_menu_action" model="ir.actions.act_window">
+            <field name="name">Send SMS</field>
+            <field name="res_model">send.text</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Send First SMS
+                </p>
+            </field>
+        </record>
+        <record id="outbox_text_menu_action" model="ir.actions.act_window">
+            <field name="name">Outbox</field>
+            <field name="res_model">sent.text</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Outbox is empty
+                </p>
+            </field>
+        </record>
         <record id="apis_menu_action" model="ir.actions.act_window">
             <field name="name">API keys</field>
             <field name="res_model">api.keys</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create API key
+                </p>
+            </field>
+        </record>
+        <record id="senderid_menu_action" model="ir.actions.act_window">
+            <field name="name">Sender Ids</field>
+            <field name="res_model">sender.id</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
@@ -12,9 +45,18 @@
                 </p>
             </field>
         </record>
+
+
+        <menuitem id="sendbulksms" parent="mainbulksmsmenu" name="Bulk SMS" />
+        <menuitem id="sendsinglesms" parent="sendbulksms" name="Send SMS"
+                  action="send_text_menu_action" />
         <menuitem id="mainbulksmsmenu" name="Bulk SMS" />
         <menuitem id="configbulksms" parent="mainbulksmsmenu" name="Config" />
         <menuitem id="bulksmsapikeys" parent="configbulksms" name="Api Keys"
                   action="apis_menu_action" />
+        <menuitem id="bulksmssenderids" parent="configbulksms" name="Sender Ids"
+                  action="senderid_menu_action" />
+        <menuitem id="outboxsmssenderids" parent="sendbulksms" name="Outbox"
+                  action="outbox_text_menu_action" />
     </data>
 </odoo>

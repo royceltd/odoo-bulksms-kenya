@@ -8,7 +8,11 @@
     'company':'Royce Technologies',
     'website':'https://roycetechnologies.co.ke',
     'depends':['base'],
-    'data':['views/config.xml'],
+    'data':[
+        'views/sendtext.xml',
+        'security/ir.model.access.csv',
+        'views/config.xml'
+    ],
     'images':[],
     'license':'AGPL-3',
     'application':False,
