@@ -11,7 +11,8 @@
     'data':[
         'views/sendtext.xml',
         'security/ir.model.access.csv',
-        'views/config.xml'
+        'views/config.xml',
+        'views/menu.xml',
     ],
     'images':[],
     'license':'AGPL-3',

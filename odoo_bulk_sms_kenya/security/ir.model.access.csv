@@ -3,3 +3,6 @@ access_send_text,access.send.text,model_send_text,base.group_user,1,1,1,0
 access_sent_text,access.sent.text,model_sent_text,base.group_user,1,0,0,0
 access_api_key,access.api.keys,model_api_keys,base.group_user,1,1,1,0
 access_sender_id,access.sender.id,model_sender_id,base.group_user,1,1,1,0
+access_royce_contacts,access.royce.contacts,model_royce_contacts,base.group_user,1,1,1,0
+access_royce_contactgroups,access.royce.contactgroups,model_royce_contactgroups,base.group_user,1,1,1,0
+access_royce_grouptext,access.royce.grouptext,model_royce_grouptext,base.group_user,1,1,1,0

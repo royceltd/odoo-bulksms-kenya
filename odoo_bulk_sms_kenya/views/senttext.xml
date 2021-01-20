@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+         <record id="sent_tree_view" model="ir.ui.view">
+             <field name="name">Send Text Tree</field>
+             <field name="model">sent.text</field>
+             <field name="arch" type="xml">
+                       <tree string="Send Text">
+                      <field name="sender_id"/>
+                      <field name="phone_number"/>
+                      <field name="text_message"/>
+                        </tree>
+              </field>
+               </record>
+
+
+    </data>
+</odoo>

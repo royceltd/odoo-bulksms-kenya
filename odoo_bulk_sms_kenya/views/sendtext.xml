@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+         <record id="sendtext_tree_view" model="ir.ui.view">
+             <field name="name">Send Text Tree</field>
+
+             <field name="model">send.text</field>
+
+             <field name="arch" type="xml">
+
+                       <tree string="Send Text">
+
+                      <field name="sender_id"/>
+
+                      <field name="phone_number"/>
+
+                      <field name="text_message"/>
+
+
+                        </tree>
+
+              </field>
+
+           </record>
+        <record id="student_free_view" model="ir.ui.view">
+                <field name="name">Send Text</field>
+                <field name="model">send.text</field>
+                <field name="arch" type="xml">
+                          <form string="Student">
+                                <sheet>
+                            <group>
+                                <group>
+                                    <field name="sender_id"/>
+                                    <field name="phone_number"/>
+                                        </group>
+                                        <group>
+                                                <field name="text_message"/>
+                                        </group>
+                                    </group>
+
+                           </sheet>
+
+                    </form>
+
+                </field>
+
+                </record>
 
     </data>
 </odoo>
