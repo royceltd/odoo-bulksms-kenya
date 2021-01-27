@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-         <record id="sendtext_tree_view" model="ir.ui.view">
-             <field name="name">Send Text Tree</field>
+         <record id="roycecontacts_tree_view" model="ir.ui.view">
+             <field name="name">Send Group Text</field>
 
-             <field name="model">send.text</field>
+             <field name="model">royce.contacts</field>
 
              <field name="arch" type="xml">
 
-                       <tree string="Send Text">
+                       <tree string="My Contacts">
 
-                      <field name="sender_id"/>
+                      <field name="first_name"/>
 
+                      <field name="other_names"/>
                       <field name="phone_number"/>
+                      <field name="contact_group"/>
+                      <field name="description"/>
+                     <field name="create_date"/>
 
-                      <field name="text_message"/>
-                           <field name="create_date"/>
 
 
                         </tree>
@@ -23,19 +25,19 @@
               </field>
 
            </record>
-        <record id="sendtext_free_view" model="ir.ui.view">
-                <field name="name">Send Text</field>
-                <field name="model">send.text</field>
+        <record id="roycecontacts_free_view" model="ir.ui.view">
+                <field name="name">Contacts</field>
+                <field name="model">royce.contacts</field>
                 <field name="arch" type="xml">
                           <form string="Student">
                                 <sheet>
                             <group>
                                 <group>
-                                    <field name="sender_id"/>
                                     <field name="phone_number"/>
+
                                         </group>
                                         <group>
-                                                <field name="text_message"/>
+                                                <field name="description"/>
                                         </group>
                                     </group>
 

@@ -13,6 +13,8 @@
         'security/ir.model.access.csv',
         'views/config.xml',
         'views/menu.xml',
+        'views/contacts.xml',
+        'views/sendgrouptext.xml',
     ],
     'images':[],
     'license':'AGPL-3',

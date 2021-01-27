@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-         <record id="sendtext_tree_view" model="ir.ui.view">
-             <field name="name">Send Text Tree</field>
+         <record id="sendgrouptext_tree_view" model="ir.ui.view">
+             <field name="name">Send Group Text</field>
 
-             <field name="model">send.text</field>
+             <field name="model">royce.grouptext</field>
 
              <field name="arch" type="xml">
 
                        <tree string="Send Text">
 
-                      <field name="sender_id"/>
-
-                      <field name="phone_number"/>
+                      <field name="group"/>
 
                       <field name="text_message"/>
-                           <field name="create_date"/>
+                      <field name="create_date"/>
+
 
 
                         </tree>
@@ -23,16 +22,16 @@
               </field>
 
            </record>
-        <record id="sendtext_free_view" model="ir.ui.view">
+        <record id="sendgrouptext_free_view" model="ir.ui.view">
                 <field name="name">Send Text</field>
-                <field name="model">send.text</field>
+                <field name="model">royce.grouptext</field>
                 <field name="arch" type="xml">
                           <form string="Student">
                                 <sheet>
                             <group>
                                 <group>
-                                    <field name="sender_id"/>
-                                    <field name="phone_number"/>
+                                    <field name="group"/>
+
                                         </group>
                                         <group>
                                                 <field name="text_message"/>

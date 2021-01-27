@@ -9,6 +9,7 @@
                       <field name="sender_id"/>
                       <field name="phone_number"/>
                       <field name="text_message"/>
+                           <field name="create_date"/>
                         </tree>
               </field>
                </record>
