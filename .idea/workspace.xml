@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/odoo_bulk_sms_kenya/models/sendgroupsms.py" beforeDir="false" afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/models/sendgroupsms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/odoo_bulk_sms_kenya/models/sendtext.py" beforeDir="false" afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/models/sendtext.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/odoo_bulk_sms_kenya/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/security/ir.model.access.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/odoo_bulk_sms_kenya/views/contacts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/views/contacts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/odoo_bulk_sms_kenya/views/sendgrouptext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/views/sendgrouptext.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

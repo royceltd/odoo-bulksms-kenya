@@ -30,7 +30,7 @@ class SendText(models.Model):
            rec.write({'status': 'cancelled'})
 
     def sendmessage(self,mobile):
-        print('this is send message')
+
         # step 1 get api key
         latest_apikey = self.env['api.keys'].search([], limit=1, order='create_date desc')
         apikey = latest_apikey.apikey

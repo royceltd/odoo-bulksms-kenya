@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields,api
+import requests
 
 class SendGroupText(models.Model):
     _name='royce.grouptext'
     group=fields.Many2one('royce.contactgroups',required=True)
     text_message=fields.Text(required=True)
+    sender_id = fields.Many2one('sender.id', required=True)
     status=fields.Selection([
         ('draft','Draft'),
         ('sent','Sent'),
@@ -16,10 +18,11 @@ class SendGroupText(models.Model):
     @api.multi
     def button_sendtext(self):
 
-        return print(self.group);
-        mobiles = self.phone_number.split(", ")
-        for mobile in mobiles:
-            self.sendmessage(mobile);
+        contacts_list = self.env['royce.contacts'].search([('contact_group','=',self.group.id)])
+        for contact in contacts_list:
+            # print (contact.phone_number)
+            self.sendmessage(contact.phone_number);
+
     @api.multi
     def button_reset(self):
        for rec in self:
@@ -31,7 +34,7 @@ class SendGroupText(models.Model):
            rec.write({'status': 'cancelled'})
 
     def sendmessage(self,mobile):
-        print('this is send message')
+
         # step 1 get api key
         latest_apikey = self.env['api.keys'].search([], limit=1, order='create_date desc')
         apikey = latest_apikey.apikey
