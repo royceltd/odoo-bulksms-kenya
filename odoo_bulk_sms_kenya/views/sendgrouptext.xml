@@ -27,6 +27,13 @@
                 <field name="model">royce.grouptext</field>
                 <field name="arch" type="xml">
                           <form string="Student">
+                                                <header>
+                                  <button name="button_sendtext" string="Send" class="oe_highlight" type="object"/>
+                                    <button name="button_reset" string="Reset to Draft" class="oe_highlight"
+                                           type="object"/>
+                                    <button name="button_cancel" string="Cancel" type="object"/>
+                                   <field name="status" widget="statusbar" statusbar_visible="draft,sent"/>
+                               </header>
                                 <sheet>
                             <group>
                                 <group>

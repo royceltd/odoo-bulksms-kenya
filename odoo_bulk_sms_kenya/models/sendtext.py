@@ -16,23 +16,9 @@ class SendText(models.Model):
 
     @api.multi
     def button_sendtext(self):
-
-        endpoint = "https://bulksms.roycetechnologies.co.ke/api/sendmessage"
-        data ={
-
-            'sender_id': 'RoyceLtd', 'text_message': 'Hello from python', 'phone_number': '0713727937'
-        }
-
-        headers ={
-
-            "Authorization": "Bearer 13|iIfwqjuorHLfKuJjGHCp11MCwvjfQKbWwu1kaqVA"
-        }
-
-        response = requests.post(endpoint, data=data, headers=headers)
-
-        print(response.json())
-
-
+        mobiles = self.phone_number.split(", ")
+        for mobile in mobiles:
+            self.sendmessage(mobile);
     @api.multi
     def button_reset(self):
        for rec in self:
@@ -42,3 +28,32 @@ class SendText(models.Model):
     def button_cancel(self):
        for rec in self:
            rec.write({'status': 'cancelled'})
+
+    def sendmessage(self,mobile):
+        print('this is send message')
+        # step 1 get api key
+        latest_apikey = self.env['api.keys'].search([], limit=1, order='create_date desc')
+        apikey = latest_apikey.apikey
+
+        endpoint = "https://bulksms.roycetechnologies.co.ke/api/sendmessage"
+        data = {
+
+            'sender_id': self.sender_id, 'text_message': self.text_message, 'phone_number': mobile
+        }
+
+        headers = {
+
+            "Authorization": "Bearer " + apikey
+        }
+
+        response = requests.post(endpoint, data=data, headers=headers).json()
+
+        self.env['sent.text'].create(
+
+            {'text_message': self.text_message, 'sender_id': self.sender_id.name,
+             'phone_number':mobile,'status':'Sent'})
+
+
+        for rec in self:
+            rec.write({'status': 'sent'})
+        # print (response)

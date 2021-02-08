@@ -16,7 +16,7 @@
                       <field name="phone_number"/>
                       <field name="contact_group"/>
                       <field name="description"/>
-                     <field name="create_date"/>
+
 
 
 
@@ -33,11 +33,16 @@
                                 <sheet>
                             <group>
                                 <group>
-                                    <field name="phone_number"/>
+                                                          <field name="first_name"/>
+
+                      <field name="other_names"/>
+                      <field name="phone_number"/>
+
 
                                         </group>
                                         <group>
-                                                <field name="description"/>
+                      <field name="contact_group"/>
+                      <field name="description"/>
                                         </group>
                                     </group>
 

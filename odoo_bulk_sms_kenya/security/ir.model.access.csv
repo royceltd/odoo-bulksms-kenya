@@ -1,6 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_send_text,access.send.text,model_send_text,base.group_user,1,1,1,0
-access_sent_text,access.sent.text,model_sent_text,base.group_user,1,0,0,0
+access_sent_text,access.sent.text,model_sent_text,base.group_user,1,0,1,0
 access_api_key,access.api.keys,model_api_keys,base.group_user,1,1,1,0
 access_sender_id,access.sender.id,model_sender_id,base.group_user,1,1,1,0
 access_royce_contacts,access.royce.contacts,model_royce_contacts,base.group_user,1,1,1,0
