@@ -6,10 +6,11 @@
     'author':'Royce Technologies',
     'maintainer':'Royce Technologies',
     'company':'Royce Technologies',
-    'website':'https://roycetechnologies.co.ke',
+    'website':'https://roycetechnologies.co.ke/bulk-sms/',
     'depends':['base'],
     'data':[
         'views/sendtext.xml',
+        'views/senttext.xml',
         'security/ir.model.access.csv',
         'views/config.xml',
         'views/menu.xml',

@@ -2,7 +2,7 @@
 <odoo>
     <data>
          <record id="sent_tree_view" model="ir.ui.view">
-             <field name="name">Send Text Tree</field>
+             <field name="name">Outbox</field>
              <field name="model">sent.text</field>
              <field name="arch" type="xml">
                        <tree string="Send Text">
@@ -13,6 +13,19 @@
                         </tree>
               </field>
                </record>
+                <record id="senttext_free_view" model="ir.ui.view">
+                <field name="name">Send Text</field>
+                <field name="model">sent.text</field>
+                <field name="arch" type="xml">
+                          <form string="Student">
+
+
+
+                    </form>
+
+                </field>
+
+                </record>
 
 
     </data>
