@@ -3,6 +3,7 @@ from odoo import models, fields
 
 class SentText(models.Model):
     _name='sent.text'
+    _order = "id desc"
     text_message=fields.Text(string="Messaqge", required=True)
     sender_id=fields.Char(string="Sender Id", required=True)
     phone_number=fields.Char(required=True)

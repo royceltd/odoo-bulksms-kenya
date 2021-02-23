@@ -4,6 +4,7 @@ import requests
 
 class SendGroupText(models.Model):
     _name='royce.grouptext'
+    _order = "id desc"
     group=fields.Many2one('royce.contactgroups',required=True)
     text_message=fields.Text(required=True)
     sender_id = fields.Many2one('sender.id', required=True)

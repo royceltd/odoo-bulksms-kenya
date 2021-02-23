@@ -3,6 +3,7 @@ from odoo import models, fields,api
 import requests
 class SendText(models.Model):
     _name='send.text'
+    _order = "id desc"
     sender_id=fields.Many2one('sender.id', required=True)
     phone_number=fields.Text(required=True)
     text_message=fields.Text(required=True)
