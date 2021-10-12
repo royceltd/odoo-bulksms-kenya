@@ -58,3 +58,27 @@ class SendText(models.Model):
         for rec in self:
             rec.write({'status': 'sent'})
         # print (response)
+    def sendCustomText(self, mobile, text,senderid):
+         # step 1 get api key
+        latest_apikey = self.env['api.keys'].search([], limit=1, order='create_date desc')
+        apikey = latest_apikey.apikey
+
+        endpoint = "https://bulksms.roycetechnologies.co.ke/api/sendmessage"
+        data = {
+
+            'sender_id': senderid, 'text_message': text, 'phone_number': mobile
+        }
+
+        headers = {
+
+            "Authorization": "Bearer " + apikey
+        }
+
+        response = requests.post(endpoint, data=data, headers=headers).json()
+
+        self.env['sent.text'].create(
+
+            {'text_message': text, 'sender_id': senderid,
+             'phone_number':mobile,'status':'Sent'})
+
+
