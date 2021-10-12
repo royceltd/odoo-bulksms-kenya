@@ -32,8 +32,9 @@ This package provides an easy interface for sending SMS in your laravel applicat
 - Under bulksms> send sms send a test message
 
 ### How to use from other models
-- Search send.text model and sendCustomText with mobile number,text message, sender id parameters e.g 
-```sh
-self.env['send.text'].sendCustomText('0713727937','Text of custom module','RoyceLtd')
-```
+- Search send.text model and sendCustomText with mobile number,text message, sender id parameters
+
+### Sample code when sending from other models
+
+- self.env['send.text'].sendCustomText('0713727937','We have received your payment, receipt number RCP0022 ','RoyceLtd')
 
