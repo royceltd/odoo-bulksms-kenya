@@ -22,6 +22,7 @@ class SendGroupText(models.Model):
         contacts_list = self.env['royce.contacts'].search([('contact_group','=',self.group.id)])
         for contact in contacts_list:
             # print (contact.phone_number)
+            # self.env['send.text'].sendCustomText('0713727937','Text of custom module','RoyceLtd')
             self.sendmessage(contact.phone_number);
 
     @api.multi
