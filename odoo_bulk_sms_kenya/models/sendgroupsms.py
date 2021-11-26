@@ -44,7 +44,7 @@ class SendGroupText(models.Model):
         endpoint = "https://bulksms.roycetechnologies.co.ke/api/sendmessage"
         data = {
 
-            'sender_id': self.sender_id, 'text_message': self.text_message, 'phone_number': mobile
+            'sender_id': self.sender_id.name, 'text_message': self.text_message, 'phone_number': mobile
         }
 
         headers = {
