@@ -17,7 +17,7 @@
         'views/contacts.xml',
         'views/sendgrouptext.xml',
     ],
-    'images':[],
+    'images': ['static/description/royce-logo.jpeg'],
     'license':'AGPL-3',
     'application':False,
     'installable':True,
