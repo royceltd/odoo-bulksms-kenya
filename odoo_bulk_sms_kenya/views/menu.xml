@@ -46,10 +46,10 @@
             </field>
         </record>
         <record id="roycecontacts_menu_action" model="ir.actions.act_window">
-            <field name="name">Sender Ids</field>
+            <field name="name">Contacts</field>
             <field name="res_model">royce.contacts</field>
             <field name="view_type">form</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">tree,kanban,form</field>
             <field name="domain">[]</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">Create The First Contacts

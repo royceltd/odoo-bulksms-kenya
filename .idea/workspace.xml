@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b0609e9-3f25-490d-a20f-eee6b418892f" name="Default Changelist" comment="" />
+    <list default="true" id="2b0609e9-3f25-490d-a20f-eee6b418892f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odoo_bulk_sms_kenya/models/sendtext.py" beforeDir="false" afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/models/sendtext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odoo_bulk_sms_kenya/views/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/views/menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odoo_bulk_sms_kenya/views/sendtext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/views/sendtext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odoo_bulk_sms_kenya/views/senttext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/views/senttext.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,12 +80,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/odoo_bulk_sms_kenya/models/sendtext.py</url>
-          <line>26</line>
+          <line>28</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/odoo_bulk_sms_kenya/models/sendtext.py</url>
-          <line>28</line>
+          <line>30</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>

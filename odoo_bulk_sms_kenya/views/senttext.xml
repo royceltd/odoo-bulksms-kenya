@@ -5,7 +5,7 @@
              <field name="name">Outbox</field>
              <field name="model">sent.text</field>
              <field name="arch" type="xml">
-                       <tree string="Send Text">
+                       <tree string="Send Text" create="false">
                       <field name="sender_id"/>
                       <field name="phone_number"/>
                       <field name="text_message"/>
@@ -18,7 +18,7 @@
                 <field name="name">Send Text</field>
                 <field name="model">sent.text</field>
                 <field name="arch" type="xml">
-                          <form string="Student">
+                          <form string="Student" create="false">
 
 
 
@@ -32,7 +32,7 @@
             <field name="name">sent.text.kanban</field>
             <field name="model">sent.text</field>
             <field name="arch" type="xml">
-                <kanban class="o_kanban_mobile">
+                <kanban class="o_kanban_mobile" create="false">
                     <field name="sender_id"/>
                     <field name="phone_number"/>
                     <field name="text_message"/>

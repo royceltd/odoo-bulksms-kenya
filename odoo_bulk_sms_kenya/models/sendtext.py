@@ -2,7 +2,9 @@
 import math
 from datetime import time
 
-from odoo import models, fields, api
+from odoo import models, fields, api,_
+from odoo.exceptions import ValidationError
+
 import requests
 
 
@@ -45,7 +47,7 @@ class SendText(models.Model):
     def button_sendtext(self):
         mobiles = self.phone_number.split(", ")
         for mobile in mobiles:
-            self.sendmessage(mobile);
+            self.sendmessage(mobile)
 
     @api.multi
     def button_reset(self):
@@ -61,26 +63,30 @@ class SendText(models.Model):
 
         # step 1 get api key
         latest_apikey = self.env['api.keys'].search([], limit=1, order='create_date desc')
-        apikey = latest_apikey.apikey
+        if latest_apikey:
+            apikey = latest_apikey.apikey
 
-        endpoint = "https://bulksms.roycetechnologies.co.ke/api/sendmessage"
-        data = {
+            endpoint = "https://bulksms.roycetechnologies.co.ke/api/sendmessage"
+            data = {
 
-            'sender_id': self.sender_id, 'text_message': self.text_message, 'phone_number': mobile
-        }
+                'sender_id': self.sender_id, 'text_message': self.text_message, 'phone_number': mobile
+            }
 
-        headers = {
+            headers = {
 
-            "Authorization": "Bearer " + apikey
-        }
+                "Authorization": "Bearer " + apikey
+            }
 
-        response = requests.post(endpoint, data=data, headers=headers).json()
+            response = requests.post(endpoint, data=data, headers=headers).json()
 
-        self.env['sent.text'].create(
+            self.env['sent.text'].create(
 
-            {'text_message': self.text_message, 'sender_id': self.sender_id.name,
-             'phone_number': mobile, 'status': 'Sent'})
+                {'text_message': self.text_message, 'sender_id': self.sender_id.name,
+                 'phone_number': mobile, 'status': 'Sent'})
 
-        for rec in self:
-            rec.write({'status': 'sent'})
-        # print (response
+            for rec in self:
+                rec.write({'status': 'sent'})
+            # print (response
+        else:
+            raise ValidationError('Please add your api key')
+
