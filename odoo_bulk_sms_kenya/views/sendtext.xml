@@ -16,8 +16,6 @@
 
                       <field name="text_message"/>
                            <field name="create_date"/>
-
-
                         </tree>
 
               </field>
@@ -27,16 +25,26 @@
                 <field name="name">Send Text</field>
                 <field name="model">send.text</field>
                 <field name="arch" type="xml">
-                          <form string="Student">
+
+                    <form create="false" edit="false" string="Sent">
                               <header>
-                                  <button name="button_sendtext" string="Send" class="oe_highlight" type="object"/>
-                                    <button name="button_reset" string="Reset to Draft" class="oe_highlight"
-                                           type="object"/>
+                                  <button name="button_sendtext" string="Send" class="oe_highlight" type="object" attrs="{'invisible': [('status','in', ('sent'))]}"/>
+                                    <button name="button_reset" string="Resend" class="oe_highlight"
+                                           type="object" attrs="{'invisible': [('status','in', ('draft'))]}"/>
                                     <button name="button_cancel" string="Cancel" type="object"/>
                                    <field name="status" widget="statusbar" statusbar_visible="draft,sent"/>
                                </header>
                                 <sheet>
+<!--                                    <div class="oe_button_box" name="button_box">-->
+<!--                                        <button class="oe_stat_button" type="object" name="action_view_outbox" icon="fa-comments">-->
+<!--                                            <div class="o_stat_info">-->
+<!--                                                <field name="outbox_count" class="o_stat_value"/>-->
+<!--                                                <span class="o_stat_text"> Outbox</span>-->
+<!--                                            </div>-->
+<!--                                        </button>-->
+<!--                                    </div>-->
                             <group>
+
                                 <group>
                                     <field name="sender_id"/>
                                     <field name="phone_number"/>
@@ -53,6 +61,35 @@
                 </field>
 
                 </record>
+         <record id="view_send_text_kanban" model="ir.ui.view">
+            <field name="name">send.text.kanban</field>
+            <field name="model">send.text</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <field name="sender_id"/>
+                    <field name="phone_number"/>
+                    <field name="text_message"/>
+                    <field name="days_difference"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong><field string="Receiver" name="phone_number"/></strong>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <span class="badge badge-pill"><t t-esc="record.days_difference.value"/> ago.</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <strong>Message: </strong><t t-esc="record.text_message.value"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
 
     </data>
 </odoo>
