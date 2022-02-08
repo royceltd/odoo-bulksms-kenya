@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b0609e9-3f25-490d-a20f-eee6b418892f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odoo_bulk_sms_kenya/static/description/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/static/description/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +31,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="/opt/odoo12/odoo/odoo-bin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../opportunitake/mpesa_pos" />
   </component>
   <component name="RunManager">
     <configuration name="odoo-bin" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -46,7 +47,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="/opt/odoo12/odoo/odoo-bin" />
-      <option name="PARAMETERS" value="--addons-path=addons,$PROJECT_DIR$" />
+      <option name="PARAMETERS" value="--addons-path=addons,$PROJECT_DIR$/../odoo-bulksms-kenya,$PROJECT_DIR$/../../../opportunitake" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
