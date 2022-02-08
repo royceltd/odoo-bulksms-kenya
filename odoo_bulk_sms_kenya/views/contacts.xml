@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
+                 <record id="view_royce_contacts_kanban" model="ir.ui.view">
+            <field name="name">royce.contacts.kanban</field>
+            <field name="model">royce.contacts</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                       <field name="first_name"/>
+                      <field name="other_names"/>
+                      <field name="phone_number"/>
+                      <field name="contact_group"/>
+                      <field name="description"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong><field string="Name" name="first_name"/></strong>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <span class="badge badge-pill"><t t-esc="record.phone_number.value"/></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <strong>Message: </strong><t t-esc="record.description.value"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
          <record id="roycecontacts_tree_view" model="ir.ui.view">
              <field name="name">Send Group Text</field>
 
