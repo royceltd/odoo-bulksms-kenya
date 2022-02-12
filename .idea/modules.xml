@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../opportunitake/l10n_kenya/.idea/l10n_ke.iml" filepath="$PROJECT_DIR$/../../../opportunitake/l10n_kenya/.idea/l10n_ke.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../opportunitake/mpesa_pos/.idea/mpesa_pos.iml" filepath="$PROJECT_DIR$/../../../opportunitake/mpesa_pos/.idea/mpesa_pos.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/roycepackagist.iml" filepath="$PROJECT_DIR$/.idea/roycepackagist.iml" />
     </modules>
   </component>
