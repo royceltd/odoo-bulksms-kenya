@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b0609e9-3f25-490d-a20f-eee6b418892f" name="Default Changelist" comment="[IMP]about">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/odoo_bulk_sms_kenya/static/description/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/odoo_bulk_sms_kenya/static/description/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
