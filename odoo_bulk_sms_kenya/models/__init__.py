@@ -7,3 +7,4 @@ from . import sendtext
 from . import contacts
 from . import  contactgroup
 from . import sendgroupsms
+from . import invoicepaid
