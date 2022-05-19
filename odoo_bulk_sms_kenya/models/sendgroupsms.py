@@ -16,7 +16,6 @@ class SendGroupText(models.Model):
     ],required=True,default='draft')
 
 
-    @api.multi
     def button_sendtext(self):
 
         contacts_list = self.env['royce.contacts'].search([('contact_group','=',self.group.id)])
@@ -25,12 +24,10 @@ class SendGroupText(models.Model):
             # self.env['send.text'].sendCustomText('0713727937','Text of custom module','RoyceLtd')
             self.sendmessage(contact.phone_number);
 
-    @api.multi
     def button_reset(self):
        for rec in self:
            rec.write({'status': 'draft'})
 
-    @api.multi
     def button_cancel(self):
        for rec in self:
            rec.write({'status': 'cancelled'})

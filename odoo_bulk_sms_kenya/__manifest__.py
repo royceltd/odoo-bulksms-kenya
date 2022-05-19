@@ -1,7 +1,7 @@
 {
     'name':'Odoo Bulk SMS Kenya',
     'summary':'Integrate bulk sms into odoo ERP in kenya',
-    'version':'12.0.1.0.0',
+    'version':'14.0.1.0.1',
     'category':'Tools',
     'author':'Royce Technologies',
     'maintainer':'Royce Technologies',
