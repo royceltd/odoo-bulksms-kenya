@@ -13,21 +13,28 @@
                            <field name="create_date"/>
                         </tree>
               </field>
-               </record>
-                <record id="senttext_free_view" model="ir.ui.view">
+        </record>
+        
+         <record id="senttext_free_view" model="ir.ui.view">
                 <field name="name">Send Text</field>
                 <field name="model">sent.text</field>
                 <field name="arch" type="xml">
-                          <form string="Student" create="false">
-
-
-
+                    <form string="Student" create="false">
+                     <group>
+                        <field name="sender_id"/>
+                        <field name="phone_number"/>
+                        <field name="text_message"/>
+                        <field name="status"/>
+                        <field name="create_date"/>
+                     </group>
                     </form>
 
                 </field>
 
                 </record>
 
+            
+            
             <record id="view_sent_text_kanban" model="ir.ui.view">
             <field name="name">sent.text.kanban</field>
             <field name="model">sent.text</field>
@@ -57,6 +64,7 @@
                 </kanban>
             </field>
         </record>
+
 
 
     </data>
