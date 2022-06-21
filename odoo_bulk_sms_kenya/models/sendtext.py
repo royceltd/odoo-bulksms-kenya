@@ -43,18 +43,18 @@ class SendText(models.Model):
             else:
                 rec.days_difference = str((fields.datetime.now() - rec.create_date).days) + " days "
 
-    @api.multi
+    # @api.multi
     def button_sendtext(self):
         mobiles = self.phone_number.split(", ")
         for mobile in mobiles:
             self.sendmessage(mobile)
 
-    @api.multi
+    # @api.multi
     def button_reset(self):
         for rec in self:
             rec.write({'status': 'draft'})
 
-    @api.multi
+    # @api.multi
     def button_cancel(self):
         for rec in self:
             rec.write({'status': 'cancelled'})
