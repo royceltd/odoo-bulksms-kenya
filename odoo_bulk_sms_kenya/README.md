@@ -4,7 +4,7 @@ This package provides an easy interface for sending SMS in your laravel applicat
 
 ### For support and equiries
 - contact us via whatsapp/call +254713727937
-- email support@roycetechnologies.co.ke
+- email developer@roycetechnologies.co.ke
 
 ## Features
 
