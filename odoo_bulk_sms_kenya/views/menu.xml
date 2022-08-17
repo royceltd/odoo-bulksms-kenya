@@ -4,7 +4,7 @@
         <record id="send_text_menu_action" model="ir.actions.act_window">
             <field name="name">Send SMS</field>
             <field name="res_model">send.text</field>
-            <field name="view_type">form</field>
+            <!-- <field name="view_type">form</field> -->
             <field name="view_mode">kanban,tree,form</field>
             <field name="domain">[]</field>
             <field name="help" type="html">
@@ -15,7 +15,7 @@
         <record id="outbox_text_menu_action" model="ir.actions.act_window">
             <field name="name">Outbox</field>
             <field name="res_model">sent.text</field>
-            <field name="view_type">form</field>
+            <!-- <field name="view_type">form</field> -->
             <field name="view_mode">kanban,tree,form</field>
             <field name="domain">[]</field>
             <field name="help" type="html">
@@ -26,7 +26,7 @@
         <record id="apis_menu_action" model="ir.actions.act_window">
             <field name="name">API keys</field>
             <field name="res_model">api.keys</field>
-            <field name="view_type">form</field>
+            <!-- <field name="view_type">form</field> -->
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
             <field name="help" type="html">
@@ -37,7 +37,7 @@
         <record id="senderid_menu_action" model="ir.actions.act_window">
             <field name="name">Sender Ids</field>
             <field name="res_model">sender.id</field>
-            <field name="view_type">form</field>
+            <!-- <field name="view_type">form</field> -->
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
             <field name="help" type="html">
@@ -48,7 +48,7 @@
         <record id="roycecontacts_menu_action" model="ir.actions.act_window">
             <field name="name">Contacts</field>
             <field name="res_model">royce.contacts</field>
-            <field name="view_type">form</field>
+            <!-- <field name="view_type">form</field> -->
             <field name="view_mode">tree,kanban,form</field>
             <field name="domain">[]</field>
             <field name="help" type="html">
@@ -59,7 +59,7 @@
         <record id="roycecontactgroup_menu_action" model="ir.actions.act_window">
             <field name="name">Contact Groups</field>
             <field name="res_model">royce.contactgroups</field>
-            <field name="view_type">form</field>
+            <!-- <field name="view_type">form</field> -->
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
             <field name="help" type="html">
@@ -70,7 +70,7 @@
         <record id="roycegrouptext_menu_action" model="ir.actions.act_window">
             <field name="name">Contact Groups</field>
             <field name="res_model">royce.grouptext</field>
-            <field name="view_type">form</field>
+            <!-- <field name="view_type">form</field> -->
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>
             <field name="help" type="html">
