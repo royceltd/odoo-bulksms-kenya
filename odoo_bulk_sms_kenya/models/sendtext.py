@@ -66,7 +66,7 @@ class SendText(models.Model):
         if latest_apikey:
             apikey = latest_apikey.apikey
 
-            endpoint = "https://bulksms.roycetechnologies.co.ke/api/sendmessage"
+            endpoint = "https://roycebulksms.com/api/sendmessage"
             data = {
 
             'sender_id': self.sender_id.name, 'text_message': self.text_message, 'phone_number': mobile
@@ -98,7 +98,7 @@ class SendText(models.Model):
         latest_apikey = self.env['api.keys'].search([], limit=1, order='create_date desc')
         apikey = latest_apikey.apikey
 
-        endpoint = "https://bulksms.roycetechnologies.co.ke/api/sendmessage"
+        endpoint = "https://roycebulksms.com/api/sendmessage"
         data = {
 
             'sender_id': senderid, 'text_message': text, 'phone_number': mobile
