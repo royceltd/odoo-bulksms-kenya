@@ -25,7 +25,7 @@ class SentText(models.Model):
     delivery_network_id = fields.Char()
     delivery_response_description = fields.Char()
     days_difference = fields.Char(string="Ago", compute="_time_ago")
-    create_date = fields.Datetime('Create Date', readonly=True),
+    create_date = fields.Datetime('Create Date', readonly=True)
 
     def _time_ago(self):
         for rec in self:
