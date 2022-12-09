@@ -2,15 +2,17 @@
 import math
 from datetime import time
 
-from odoo import models, fields, api,_
+from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 import requests
+import logging
 
+_logger = logging.getLogger(__name__)
 
 class SendText(models.Model):
     _name = 'send.text'
-
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     _order = "id desc"
     _rec_name = 'phone_number'
 
@@ -66,8 +68,8 @@ class SendText(models.Model):
             endpoint = "https://roycebulksms.com/api/sendmessage"
             data = {
 
-            'sender_id': self.sender_id.name, 'text_message': self.text_message, 'phone_number': mobile
-        }
+                'sender_id': self.sender_id.name, 'text_message': self.text_message, 'phone_number': mobile
+            }
 
             headers = {
 
@@ -75,14 +77,21 @@ class SendText(models.Model):
             }
 
             response = requests.post(endpoint, data=data, headers=headers).json()
+            # _logger.error("response")
 
-            self.env['sent.text'].create(
+            if response.get("code") == 1:
+                self.env['sent.text'].create(
 
-                {'text_message': self.text_message, 'sender_id': self.sender_id.name,
-                 'phone_number': mobile, 'status': 'Sent'})
+                    {'text_message': self.text_message, 'sender_id': self.sender_id.name,
+                     'phone_number': mobile, 'status': 'Sent'})
+                self.message_post(body=response.get("message"), subject=response.get("status"))
 
-            for rec in self:
-                rec.write({'status': 'sent'})
+                for rec in self:
+                    rec.write({'status': 'sent'})
+            else:
+                self.message_post(body=response.get("message"), subject=response.get("status"))
+                raise ValidationError(response.get("message"))
+
             # print (response
         else:
             raise ValidationError('Please add your api key')
@@ -90,8 +99,9 @@ class SendText(models.Model):
         for rec in self:
             rec.write({'status': 'sent'})
         # print (response)
-    def sendCustomText(self, mobile, text,senderid):
-         # step 1 get api key
+
+    def sendCustomText(self, mobile, text, senderid):
+        # step 1 get api key
         latest_apikey = self.env['api.keys'].search([], limit=1, order='create_date desc')
         apikey = latest_apikey.apikey
 
@@ -111,6 +121,4 @@ class SendText(models.Model):
         self.env['sent.text'].create(
 
             {'text_message': text, 'sender_id': senderid,
-             'phone_number':mobile,'status':'Sent'})
-
-
+             'phone_number': mobile, 'status': 'Sent'})
