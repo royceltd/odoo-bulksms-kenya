@@ -6,7 +6,7 @@
     'author':'Royce Technologies',
     'maintainer':'Royce Technologies',
     'company':'Royce Technologies',
-    'website':'https://roycetechnologies.co.ke/bulk-sms/',
+    'website':'https://roycebulksms.com',
     'depends':['base'],
     'data':[
         'views/sendtext.xml',
