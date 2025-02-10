@@ -29,7 +29,10 @@
                 <field name="arch" type="xml">
                           <form string="Student">
                            <header>
-                                  <button name="button_sendtext" string="Send" class="oe_highlight" type="object" attrs="{'invisible': [('status','in', ('sent'))]}"/>
+                                  <!-- <button name="button_sendtext" string="Send" class="oe_highlight" type="object" attrs="{'invisible': [('status','in', ('sent'))]}"/> -->
+                                  <button name="button_sendtext" string="Send" class="oe_highlight" type="object">
+  <attribute name="modifiers">{'invisible': [('status', 'in', ('sent',))]}</attribute>
+</button>
                                     <button name="button_reset" string="Reset to Draft" class="oe_highlight"
                                            type="object"/>
                                     <button name="button_cancel" string="Cancel" type="object"/>
