@@ -84,12 +84,12 @@ class SendText(models.Model):
 
                     {'text_message': self.text_message, 'sender_id': self.sender_id.name,
                      'phone_number': mobile, 'status': 'Sent'})
-                self.message_post(body=response.get("message"), subject=response.get("status"))
+                # self.message_post(body=response.get("message"), subject=response.get("status"))
 
                 for rec in self:
                     rec.write({'status': 'sent'})
             else:
-                self.message_post(body=response.get("message"), subject=response.get("status"))
+                # self.message_post(body=response.get("message"), subject=response.get("status"))
                 raise ValidationError(response.get("message"))
 
             # print (response
