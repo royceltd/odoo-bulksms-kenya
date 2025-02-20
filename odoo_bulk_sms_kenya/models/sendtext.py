@@ -12,7 +12,7 @@ _logger = logging.getLogger(__name__)
 
 class SendText(models.Model):
     _name = 'send.text'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    # _inherit = ['mail.thread', 'mail.activity.mixin']
     _order = "id desc"
     _rec_name = 'phone_number'
 
