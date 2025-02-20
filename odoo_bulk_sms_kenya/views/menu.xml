@@ -85,8 +85,8 @@
           action="outbox_text_menu_action" />
         <menuitem id="sendsinglesms" parent="sendbulksms" name="Send SMS"
                   action="send_text_menu_action" />
-        <menuitem id="sendgroupsms" parent="sendbulksms" name="Send Group SMS"
-                  action="roycegrouptext_menu_action" />
+        <!-- <menuitem id="sendgroupsms" parent="sendbulksms" name="Send Group SMS"
+                  action="roycegrouptext_menu_action" /> -->
 
 
         <menuitem id="roycecontacts" parent="mainbulksmsmenu" name="Contacts" />
