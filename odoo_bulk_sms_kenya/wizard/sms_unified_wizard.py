@@ -158,4 +158,5 @@ class SmsUnifiedWizard(models.TransientModel):
     def action_refresh_statistics(self):
         """Refresh statistics manually"""
         self._compute_statistics()
+        return True
         return {'type': 'ir.actions.do_nothing'}
