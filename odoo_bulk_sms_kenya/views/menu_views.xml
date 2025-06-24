@@ -59,6 +59,12 @@
                   action="action_sms_template"
                   sequence="20"/>
 
+        <menuitem id="menu_sms_send_unified"
+          name="Send SMS"
+          parent="menu_bulk_sms_send"
+          action="action_sms_unified_wizard"
+          sequence="10"/>
+
         <!-- Send SMS Submenu -->
         <menuitem id="menu_bulk_sms_send"
                   name="Send SMS"
