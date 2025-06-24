@@ -38,4 +38,4 @@ This package provides an easy interface for sending SMS in your laravel applicat
 
 - self.env['send.text'].sendCustomText('0713727937','We have received your payment, receipt number RCP0022 ','RoyceLtd')
 
-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
+
