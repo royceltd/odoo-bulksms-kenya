@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-
-from . import  senttext
-from . import  sendids
-from . import  apikeys
-from . import sendtext
-from . import contacts
-from . import  contactgroup
-from . import sendgroupsms
-# from . import invoicepaid
+from . import sms_config
+from . import sms_template
+from . import sms_log
