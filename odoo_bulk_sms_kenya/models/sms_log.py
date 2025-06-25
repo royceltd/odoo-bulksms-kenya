@@ -37,15 +37,22 @@ class SmsLog(models.Model):
         """Send SMS via API and log the attempt"""
         
         # Get active SMS configuration
+
+        
         try:
             config = self.env['sms.config'].get_active_config()
+            print(f"Using SMS Config: (ID: {config.id})")
         except Exception as e:
+            print(f"Error fetching SMS config: {str(e)}")
             return {'success': False, 'error': str(e)}
 
         # Clean phone number
         clean_phone = self._clean_phone_number(phone_number)
         if not clean_phone:
+            print("Invalid phone number format")
             return {'success': False, 'error': 'Invalid phone number'}
+        else:
+            print(f"Cleaned phone number: {clean_phone} ++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
         # Create log record
         log_vals = {
@@ -60,6 +67,8 @@ class SmsLog(models.Model):
         }
         log_record = self.create(log_vals)
 
+        print(f"Sending SMS to {clean_phone} with message: {message}")
+
         # Prepare API request
         headers = {
             'Authorization': f'Bearer {config.api_key}',
@@ -68,7 +77,7 @@ class SmsLog(models.Model):
         
         payload = {
             'phone_number': clean_phone,
-            'message': message,
+            'text_message': message,
             'sender_id': config.sender_id
         }
 
@@ -81,6 +90,7 @@ class SmsLog(models.Model):
                     'status': 'sent',
                     'sent_date': fields.Datetime.now()
                 })
+                print("send sms response: ", response.text)
                 return {'success': True, 'log_id': log_record.id}
             else:
                 error_msg = f"API Error: {response.status_code} - {response.text}"
@@ -88,9 +98,11 @@ class SmsLog(models.Model):
                     'status': 'failed',
                     'error_message': error_msg
                 })
+                print(f"Failed to send SMS: {error_msg}")
                 return {'success': False, 'error': error_msg, 'log_id': log_record.id}
                 
         except requests.exceptions.RequestException as e:
+            print(f"Request failed: {str(e)}")
             error_msg = f"Request Error: {str(e)}"
             log_record.write({
                 'status': 'failed',
