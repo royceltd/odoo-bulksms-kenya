@@ -63,18 +63,18 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <ul>
-                                                <li><code>${customer_name}</code> - Customer name</li>
-                                                <li><code>${supplier_name}</code> - Supplier name</li>
-                                                <li><code>${amount}</code> - Transaction amount</li>
-                                                <li><code>${order_number}</code> - Order number</li>
+                                                <li><code>[customer_name]</code> - Customer name</li>
+                                                <li><code>[supplier_name]</code> - Supplier name</li>
+                                                <li><code>[amount]</code> - Transaction amount</li>
+                                                <li><code>[order_number]</code> - Order number</li>
                                             </ul>
                                         </div>
                                         <div class="col-6">
                                             <ul>
-                                                <li><code>${invoice_number}</code> - Invoice number</li>
-                                                <li><code>${date}</code> - Current date</li>
-                                                <li><code>${company_name}</code> - Company name</li>
-                                                <li><code>${days_overdue}</code> - Days overdue</li>
+                                                <li><code>[invoice_number]</code> - Invoice number</li>
+                                                <li><code>[date]</code> - Current date</li>
+                                                <li><code>[company_name]</code> - Company name</li>
+                                                <li><code>[days_overdue]</code> - Days overdue</li>
                                             </ul>
                                         </div>
                                     </div>
