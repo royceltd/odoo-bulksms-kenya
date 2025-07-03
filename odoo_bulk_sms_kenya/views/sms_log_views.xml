@@ -4,8 +4,8 @@
 
         <!-- SMS Log List View -->
         <record id="view_sms_log_tree" model="ir.ui.view">
-            <field name="name">sms.log.tree</field>
-            <field name="model">sms.log</field>
+            <field name="name">royce.sms.log.tree</field>
+            <field name="model">royce.sms.log</field>
             <field name="arch" type="xml">
                 <tree string="SMS Log" decoration-success="status=='sent'" 
                       decoration-danger="status=='failed'" decoration-info="status=='delivered'">
@@ -24,8 +24,8 @@
 
         <!-- SMS Log Form View -->
         <record id="view_sms_log_form" model="ir.ui.view">
-            <field name="name">sms.log.form</field>
-            <field name="model">sms.log</field>
+            <field name="name">royce.sms.log.form</field>
+            <field name="model">royce.sms.log</field>
             <field name="arch" type="xml">
                 <form string="SMS Log" create="false">
                     <header>
@@ -64,8 +64,8 @@
 
         <!-- SMS Log Search View -->
         <record id="view_sms_log_search" model="ir.ui.view">
-            <field name="name">sms.log.search</field>
-            <field name="model">sms.log</field>
+            <field name="name">royce.sms.log.search</field>
+            <field name="model">royce.sms.log</field>
             <field name="arch" type="xml">
                 <search string="SMS Log">
                     <field name="name"/>

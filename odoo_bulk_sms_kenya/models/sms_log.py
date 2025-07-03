@@ -6,7 +6,7 @@ import re
 
 
 class SmsLog(models.Model):
-    _name = 'sms.log'
+    _name = 'royce.sms.log'
     _description = 'SMS Log'
     _order = 'create_date desc'
 
@@ -43,7 +43,7 @@ class SmsLog(models.Model):
 
         
         try:
-            config = self.env['sms.config'].get_active_config()
+            config = self.env['royce.sms.config'].get_active_config()
             print(f"Using SMS Config: (ID: {config.id})")
         except Exception as e:
             print(f"Error fetching SMS config: {str(e)}")
