@@ -29,6 +29,7 @@ class SmsLog(models.Model):
         ('employee', 'Employee'),
         ('customer', 'Customer'),     # Add this
         ('supplier', 'Supplier'),
+        ('notification', 'Notification'),
         ('custom', 'Custom'),
     ], 'Recipient Type')
     recipient_id = fields.Integer('Recipient ID')
