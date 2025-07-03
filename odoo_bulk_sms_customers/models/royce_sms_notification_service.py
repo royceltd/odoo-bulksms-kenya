@@ -118,7 +118,7 @@ class RoyceSmsNotificationService(models.Model):
         """Send SMS and create log entry"""
         
         # Send SMS using existing sms.log service
-        sms_log = self.env['sms.log']
+        sms_log = self.env['royce.sms.log']
         result = sms_log.send_sms(
             phone_number=recipient_phone,
             message=message,

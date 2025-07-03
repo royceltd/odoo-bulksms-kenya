@@ -15,7 +15,7 @@ class CustomerSmsLog(models.Model):
     ], 'Type', required=True)
     phone_number = fields.Char('Phone Number', required=True)
     message = fields.Text('Message', required=True)
-    template_id = fields.Many2one('sms.royce.template', 'Template Used')
+    template_id = fields.Many2one('royce.sms.royce.template', 'Template Used')
     status = fields.Selection([
         ('draft', 'Draft'),
         ('sent', 'Sent'),
@@ -24,7 +24,7 @@ class CustomerSmsLog(models.Model):
     ], 'Status', default='draft')
     error_message = fields.Text('Error Message')
     sent_date = fields.Datetime('Sent Date')
-    sms_log_id = fields.Many2one('sms.log', 'SMS Log Reference')
+    sms_log_id = fields.Many2one('royce.sms.log', 'SMS Log Reference')
     company_id = fields.Many2one('res.company', 'Company', default=lambda self: self.env.company)
 
     @api.model
@@ -58,7 +58,7 @@ class CustomerSmsLog(models.Model):
             return {'warning': {'title': 'Warning', 'message': 'Can only retry failed messages'}}
         
         # Use existing sms.log.send_sms method
-        sms_log = self.env['sms.log']
+        sms_log = self.env['royce.sms.log']
         result = sms_log.send_sms(
             phone_number=self.phone_number,
             message=self.message,
