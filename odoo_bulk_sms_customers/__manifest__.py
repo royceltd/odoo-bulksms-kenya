@@ -19,14 +19,20 @@
     ''',
     'author': 'Your Company',
     'website': 'https://www.yourcompany.com',
-    'depends': ['base', 'contacts', 'sale', 'purchase', 'odoo_bulk_sms_kenya'],
+    'depends': ['base', 'contacts', 'sale', 'purchase', 'odoo_bulk_sms_kenya','account'],
     'data': [
         'security/customer_sms_security.xml',
         'security/ir.model.access.csv',
+        'data/royce_sms_default_templates.xml',        # NEW
+        'data/royce_sms_cron_jobs.xml',                # NEW
         'views/menu_views.xml',
         'views/customer_sms_log_views.xml',
         'wizard/customer_sms_wizard_views.xml',
         'wizard/supplier_sms_wizard_views.xml',
+
+        'views/royce_sms_notification_template_views.xml',  # NEW
+        'views/royce_sms_notification_log_views.xml',       # NEW
+        'views/royce_sms_notification_menu_views.xml',      # NEW
     ],
     'installable': True,
     'auto_install': False,
