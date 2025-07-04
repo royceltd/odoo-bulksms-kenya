@@ -30,7 +30,8 @@
                                        options='{"terminology": "archive"}'/>
                             </button>
                         </div>
-                        <div class="oe_title">
+                        <!-- FIXED: Changed oe_title to o_title -->
+                        <div class="o_title">
                             <h1>
                                 <field name="name" placeholder="Configuration Name"/>
                             </h1>
@@ -45,12 +46,13 @@
                                 <field name="company_id" groups="base.group_multi_company"/>
                             </group>
                         </group>
-                        <div class="oe_chatter">
-                            <field name="message_follower_ids"/>
-                            <field name="activity_ids"/>
-                            <field name="message_ids"/>
-                        </div>
                     </sheet>
+                    <!-- FIXED: Replaced old div structure with new chatter tag -->
+                    <chatter>
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </chatter>
                 </form>
             </field>
         </record>
