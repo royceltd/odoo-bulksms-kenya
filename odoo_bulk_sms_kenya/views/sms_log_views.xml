@@ -7,7 +7,7 @@
             <field name="name">royce.sms.log.tree</field>
             <field name="model">royce.sms.log</field>
             <field name="arch" type="xml">
-                <tree string="SMS Log" decoration-success="status=='sent'" 
+                <list string="SMS Log" decoration-success="status=='sent'" 
                       decoration-danger="status=='failed'" decoration-info="status=='delivered'">
                     <field name="name"/>
                     <field name="recipient_name"/>
@@ -18,7 +18,7 @@
                     <field name="template_id"/>
                     <button name="retry_send" type="object" string="Retry" 
                             icon="fa-refresh" invisible="status != 'failed'"/>
-                </tree>
+                </list>
             </field>
         </record>
 

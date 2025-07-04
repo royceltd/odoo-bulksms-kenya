@@ -6,19 +6,19 @@
         <record id="action_sms_config" model="ir.actions.act_window">
             <field name="name">SMS Configuration</field>
             <field name="res_model">royce.sms.config</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
 
         <record id="action_sms_template" model="ir.actions.act_window">
             <field name="name">SMS Templates</field>
             <field name="res_model">royce.sms.royce.template</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
 
         <record id="action_sms_log" model="ir.actions.act_window">
             <field name="name">SMS Log</field>
             <field name="res_model">royce.sms.log</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
 
         <record id="action_sms_contact_wizard" model="ir.actions.act_window">

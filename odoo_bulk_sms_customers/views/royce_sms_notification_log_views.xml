@@ -1,12 +1,12 @@
 <odoo>
     <data>
 
-        <!-- Notification Log Tree View -->
+        <!-- Notification Log List View -->
         <record id="royce_view_notification_log_tree" model="ir.ui.view">
             <field name="name">royce.sms.notification.log.tree</field>
             <field name="model">royce.sms.notification.log</field>
             <field name="arch" type="xml">
-                <tree string="SMS Notification Log" decoration-success="status=='sent'" 
+                <list string="SMS Notification Log" decoration-success="status=='sent'" 
                       decoration-danger="status=='failed'">
                     <field name="name"/>
                     <field name="event_type"/>
@@ -16,7 +16,7 @@
                     <field name="status"/>
                     <field name="create_date" string="Sent Date"/>
                     <field name="trigger_user_id"/>
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -99,7 +99,7 @@
         <record id="royce_action_notification_log" model="ir.actions.act_window">
             <field name="name">SMS Notification Log</field>
             <field name="res_model">royce.sms.notification.log</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
             <field name="context">{'search_default_royce_filter_today': 1}</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">

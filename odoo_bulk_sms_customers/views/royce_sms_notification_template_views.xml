@@ -12,17 +12,17 @@
 <odoo>
     <data>
 
-        <!-- Customer-Facing Templates Tree View -->
+        <!-- Customer-Facing Templates List View -->
         <record id="royce_view_customer_template_tree" model="ir.ui.view">
             <field name="name">royce.sms.notification.template.customer.tree</field>
             <field name="model">royce.sms.notification.template</field>
             <field name="arch" type="xml">
-                <tree string="Customer SMS Templates">
+                <list string="Customer SMS Templates">
                     <field name="name"/>
                     <field name="event_type"/>
                     <field name="active"/>
                     <field name="company_id" groups="base.group_multi_company"/>
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -95,18 +95,18 @@
             </field>
         </record>
 
-        <!-- Internal Templates Tree View -->
+        <!-- Internal Templates List View -->
         <record id="royce_view_internal_template_tree" model="ir.ui.view">
             <field name="name">royce.sms.notification.template.internal.tree</field>
             <field name="model">royce.sms.notification.template</field>
             <!-- <field name="domain">[('template_category', '=', 'internal_notification')]</field> -->
             <field name="arch" type="xml">
-                <tree string="Internal SMS Templates">
+                <list string="Internal SMS Templates">
                     <field name="name"/>
                     <field name="event_type"/>
                     <field name="active"/>
                     <field name="company_id" groups="base.group_multi_company"/>
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -170,7 +170,7 @@
         <record id="royce_action_customer_templates" model="ir.actions.act_window">
             <field name="name">Customer SMS Templates</field>
             <field name="res_model">royce.sms.notification.template</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
             <field name="domain">[('template_category', '=', 'customer_facing')]</field>
             <field name="context">{'default_template_category': 'customer_facing'}</field>
             <field name="view_id" ref="royce_view_customer_template_tree"/>
@@ -187,7 +187,7 @@
         <record id="royce_action_internal_templates" model="ir.actions.act_window">
             <field name="name">Internal SMS Templates</field>
             <field name="res_model">royce.sms.notification.template</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
             <field name="domain">[('template_category', '=', 'internal_notification')]</field>
             <field name="context">{'default_template_category': 'internal_notification'}</field>
             <field name="view_id" ref="royce_view_internal_template_tree"/>

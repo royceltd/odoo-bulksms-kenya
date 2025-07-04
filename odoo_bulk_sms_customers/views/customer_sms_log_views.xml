@@ -1,12 +1,12 @@
 <odoo>
     <data>
 
-        <!-- Customer SMS Log Tree View -->
+        <!-- Customer SMS Log List View -->
         <record id="view_customer_sms_log_tree" model="ir.ui.view">
             <field name="name">customer.sms.log.tree</field>
             <field name="model">customer.sms.log</field>
             <field name="arch" type="xml">
-                <tree string="Customer SMS Log" decoration-success="status=='sent'" 
+                <list string="Customer SMS Log" decoration-success="status=='sent'" 
                       decoration-danger="status=='failed'" decoration-info="status=='delivered'">
                     <field name="reference"/>
                     <field name="partner_id"/>
@@ -17,7 +17,7 @@
                     <field name="template_id"/>
                     <button name="retry_send" type="object" string="Retry" 
                             icon="fa-refresh" invisible="status != 'failed'"/>
-                </tree>
+                </list>
             </field>
         </record>
 
