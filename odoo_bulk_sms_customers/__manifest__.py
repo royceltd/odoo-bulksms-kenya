@@ -17,8 +17,8 @@
         
         Dependencies: Requires odoo_bulk_sms_kenya module
     ''',
-    'author': 'Your Company',
-    'website': 'https://www.yourcompany.com',
+    'author': 'Royce Technologies Ltd',
+    'website': 'https://roycetechnologies.co.ke',
     'depends': ['base', 'contacts', 'sale', 'purchase', 'odoo_bulk_sms_kenya','account'],
     'data': [
         'security/customer_sms_security.xml',
