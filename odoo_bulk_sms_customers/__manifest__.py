@@ -24,6 +24,7 @@
         'security/customer_sms_security.xml',
         'security/ir.model.access.csv',
         'data/royce_sms_default_templates.xml',        # NEW
+        'data/royce_sms_sales_default_templates.xml',  # SALES RELATED
         'data/royce_sms_cron_jobs.xml',                # NEW
         'views/menu_views.xml',
         'views/customer_sms_log_views.xml',
