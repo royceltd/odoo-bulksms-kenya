@@ -23,7 +23,8 @@
     'data': [
         'security/sms_security.xml',
         'security/ir.model.access.csv',
-        'wizard/sms_unified_wizard_views.xml',  # Add this line
+        'security/ir_model.xml',           
+        'wizard/sms_unified_wizard_views.xml', 
         'views/menu_views.xml',
         'views/sms_config_views.xml',
         'views/sms_template_views.xml',

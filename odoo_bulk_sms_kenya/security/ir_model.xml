@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Explicitly declare model references for access rights -->
+        <!-- These ensure models exist before CSV tries to reference them -->
+        
+        <record id="model_royce_sms_config" model="ir.model">
+            <field name="model">royce.sms.config</field>
+            <field name="name">SMS Configuration</field>
+            <field name="info">SMS API Configuration Settings</field>
+        </record>
+        
+        <record id="model_royce_sms_royce_template" model="ir.model">
+            <field name="model">royce.sms.royce.template</field>
+            <field name="name">SMS Template</field>
+            <field name="info">SMS Message Templates</field>
+        </record>
+        
+        <record id="model_royce_sms_log" model="ir.model">
+            <field name="model">royce.sms.log</field>
+            <field name="name">SMS Log</field>
+            <field name="info">SMS Delivery Log</field>
+        </record>
+        
+        <record id="model_royce_sms_contact_wizard" model="ir.model">
+            <field name="model">royce.sms.contact.wizard</field>
+            <field name="name">SMS Contact Wizard</field>
+            <field name="info">Send SMS to Contacts Wizard</field>
+        </record>
+        
+        <record id="model_royce_sms_employee_wizard" model="ir.model">
+            <field name="model">royce.sms.employee.wizard</field>
+            <field name="name">SMS Employee Wizard</field>
+            <field name="info">Send SMS to Employees Wizard</field>
+        </record>
+        
+        <record id="model_royce_sms_unified_wizard" model="ir.model">
+            <field name="model">royce.sms.unified.wizard</field>
+            <field name="name">SMS Unified Wizard</field>
+            <field name="info">Unified SMS Sending Wizard</field>
+        </record>
+    </data>
+</odoo>
