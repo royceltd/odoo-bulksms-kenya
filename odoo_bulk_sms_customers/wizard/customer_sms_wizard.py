@@ -45,7 +45,7 @@ class CustomerSmsWizard(models.TransientModel):
                     customers = self.env['res.partner']
             
             wizard.total_customers = len(customers)
-            customers_with_phone = customers.filtered(lambda c: c.mobile or c.phone)
+            customers_with_phone = customers.filtered(lambda c:  c.phone)
             wizard.customers_with_phone = len(customers_with_phone)
 
     @api.onchange('template_id', 'custom_message')
@@ -81,7 +81,7 @@ class CustomerSmsWizard(models.TransientModel):
             ])
 
         # Filter customers with phone numbers
-        valid_customers = customers.filtered(lambda c: c.mobile or c.phone)
+        valid_customers = customers.filtered(lambda c:  c.phone)
         
         if not valid_customers:
             raise UserError('No customers found with phone numbers.')
@@ -101,7 +101,7 @@ class CustomerSmsWizard(models.TransientModel):
 
             # Send SMS using existing sms.log method
             result = sms_log.send_sms(
-                phone_number=customer.mobile or customer.phone,
+                phone_number= customer.phone,
                 message=message,
                 recipient_name=customer.name,
                 template_id=self.template_id.id if self.template_id else None,

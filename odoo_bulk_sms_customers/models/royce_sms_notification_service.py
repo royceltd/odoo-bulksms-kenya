@@ -50,7 +50,7 @@ class RoyceSmsNotificationService(models.Model):
             # Customer events
             if 'customer_id' in context_data:
                 customer = self.env['res.partner'].browse(context_data['customer_id'])
-                recipient_phone = customer.mobile or customer.phone
+                recipient_phone =  customer.phone
                 recipient_name = customer.name
                 recipient_type = 'customer'
         
@@ -82,10 +82,10 @@ class RoyceSmsNotificationService(models.Model):
         # Add person who created the record
         if trigger_user_id:
             user = self.env['res.users'].browse(trigger_user_id)
-            if user.partner_id.mobile or user.partner_id.phone:
+            if  user.partner_id.phone:
                 recipients.append({
                     'name': user.name,
-                    'phone': user.partner_id.mobile or user.partner_id.phone,
+                    'phone': user.partner_id.phone,
                     'type': 'internal_user'
                 })
         
