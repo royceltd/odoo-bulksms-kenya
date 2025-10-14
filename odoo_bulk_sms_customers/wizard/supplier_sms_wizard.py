@@ -45,7 +45,7 @@ class SupplierSmsWizard(models.TransientModel):
                     suppliers = self.env['res.partner']
             
             wizard.total_suppliers = len(suppliers)
-            suppliers_with_phone = suppliers.filtered(lambda s: s.mobile or s.phone)
+            suppliers_with_phone = suppliers.filtered(lambda s:  s.phone)
             wizard.suppliers_with_phone = len(suppliers_with_phone)
 
     @api.onchange('template_id', 'custom_message')
@@ -81,7 +81,7 @@ class SupplierSmsWizard(models.TransientModel):
             ])
 
         # Filter suppliers with phone numbers
-        valid_suppliers = suppliers.filtered(lambda s: s.mobile or s.phone)
+        valid_suppliers = suppliers.filtered(lambda s:  s.phone)
         
         if not valid_suppliers:
             raise UserError('No suppliers found with phone numbers.')
@@ -101,7 +101,7 @@ class SupplierSmsWizard(models.TransientModel):
 
             # Send SMS using existing sms.log method
             result = sms_log.send_sms(
-                phone_number=supplier.mobile or supplier.phone,
+                phone_number= supplier.phone,
                 message=message,
                 recipient_name=supplier.name,
                 template_id=self.template_id.id if self.template_id else None,

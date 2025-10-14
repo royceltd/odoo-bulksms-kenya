@@ -58,7 +58,7 @@ class RoyceSmsNotificationService(models.Model):
             # Supplier events
             if 'supplier_id' in context_data:
                 supplier = self.env['res.partner'].browse(context_data['supplier_id'])
-                recipient_phone = supplier.mobile or supplier.phone
+                recipient_phone =  supplier.phone
                 recipient_name = supplier.name
                 recipient_type = 'supplier'
         

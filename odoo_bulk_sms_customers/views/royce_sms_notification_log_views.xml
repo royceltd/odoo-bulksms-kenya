@@ -63,7 +63,7 @@
         </record>
 
         <!-- Notification Log Search View -->
-        <record id="royce_view_notification_log_search" model="ir.ui.view">
+        <!-- <record id="royce_view_notification_log_search" model="ir.ui.view">
             <field name="name">royce.sms.notification.log.search</field>
             <field name="model">royce.sms.notification.log</field>
             <field name="arch" type="xml">
@@ -93,7 +93,7 @@
                     </group>
                 </search>
             </field>
-        </record>
+        </record> -->
 
         <!-- Notification Log Action -->
         <record id="royce_action_notification_log" model="ir.actions.act_window">

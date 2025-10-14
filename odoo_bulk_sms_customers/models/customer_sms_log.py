@@ -33,7 +33,7 @@ class CustomerSmsLog(models.Model):
         partner = self.env['res.partner'].browse(partner_id)
         
         # Get phone number (prefer mobile over phone)
-        phone = partner.mobile or partner.phone
+        phone =  partner.phone
         
         # Create customer SMS log
         log_vals = {
