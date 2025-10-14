@@ -1,6 +1,6 @@
 {
     'name': 'Bulk SMS for Customers & Suppliers',
-    'version': '18.0.1.0.0',
+    'version': '19.0.1.0.0',
     'category': 'Sales/CRM',
     'summary': 'Send bulk SMS to customers and suppliers via existing SMS infrastructure',
     'description': '''
@@ -18,7 +18,7 @@
         Dependencies: Requires odoo_bulk_sms_kenya module
     ''',
     'author': 'Your Company',
-    'website': 'https://www.yourcompany.com',
+    'website': 'https://roycebulksms.com',
     'depends': ['base', 'contacts', 'sale', 'purchase', 'odoo_bulk_sms_kenya','account'],
     'data': [
         'security/customer_sms_security.xml',

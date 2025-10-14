@@ -78,9 +78,9 @@
                     <filter name="filter_delivered" string="Delivered" domain="[('status', '=', 'delivered')]"/>
                     <separator/>
                     <filter name="filter_today" string="Today" 
-                            domain="[('create_date', '&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0)))]"/>
+                            domain="[('create_date', '&gt;=', 'today')]"/>
                     <filter name="filter_week" string="This Week" 
-                            domain="[('create_date', '&gt;=', (context_today() - datetime.timedelta(days=7)).strftime('%Y-%m-%d'))]"/>
+                            domain="[('create_date', '&gt;=', 'today -7d')]"/>
                     <group expand="1" string="Group By">
                         <filter name="group_partner_type" string="Partner Type" context="{'group_by': 'partner_type'}"/>
                         <filter name="group_status" string="Status" context="{'group_by': 'status'}"/>

@@ -63,7 +63,7 @@
         </record>
 
         <!-- SMS Log Search View -->
-        <record id="view_sms_log_search" model="ir.ui.view">
+        <!-- <record id="view_sms_log_search" model="ir.ui.view">
             <field name="name">royce.sms.log.search</field>
             <field name="model">royce.sms.log</field>
             <field name="arch" type="xml">
@@ -88,7 +88,7 @@
                     </group>
                 </search>
             </field>
-        </record>
+        </record> -->
 
     </data>
 </odoo>

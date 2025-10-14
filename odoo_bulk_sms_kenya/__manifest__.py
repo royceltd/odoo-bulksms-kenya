@@ -1,6 +1,6 @@
 {
     'name': 'Bulk SMS Kenya',
-    'version': '18.0.1.0.0',
+    'version': '19.0.1.0.0',
     'category': 'Tools',
     'summary': 'Send bulk SMS to contacts and employees via Royce Bulk SMS API',
     'description': '''
@@ -18,7 +18,7 @@
         API Integration: https://roycebulksms.com/send-message
     ''',
     'author': 'Your Company',
-    'website': 'https://www.yourcompany.com',
+    'website': 'https://roycebulksms.com',
     'depends': ['base', 'contacts', 'hr'],
     'data': [
         'security/sms_security.xml',

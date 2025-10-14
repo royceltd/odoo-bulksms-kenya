@@ -82,9 +82,9 @@
                     <filter name="royce_filter_failed" string="Failed" domain="[('status', '=', 'failed')]"/>
                     <separator/>
                     <filter name="royce_filter_today" string="Today" 
-                            domain="[('create_date', '&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0)))]"/>
+                            domain="[('create_date', '&gt;=', 'today')]"/>
                     <filter name="royce_filter_week" string="This Week" 
-                            domain="[('create_date', '&gt;=', (context_today() - datetime.timedelta(days=7)).strftime('%Y-%m-%d'))]"/>
+                            domain="[('create_date', '&gt;=', 'today -7d')]"/>
                     <group expand="1" string="Group By">
                         <filter name="royce_group_event_type" string="Event Type" context="{'group_by': 'event_type'}"/>
                         <filter name="royce_group_template_category" string="Template Category" context="{'group_by': 'template_category'}"/>

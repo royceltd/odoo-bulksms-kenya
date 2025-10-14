@@ -43,7 +43,8 @@ class SmsUnifiedWizard(models.TransientModel):
                 else:
                     all_recipients = wizard.contact_ids
                 
-                recipients_with_phone = all_recipients.filtered(lambda c: c.mobile or c.phone)
+                # recipients_with_phone = all_recipients.filtered(lambda c: c.mobile or c.phone)
+                recipients_with_phone = all_recipients.filtered(lambda c:  c.phone)
                 
             else:  # employees
                 if wizard.selection_type == 'all':
@@ -90,7 +91,7 @@ class SmsUnifiedWizard(models.TransientModel):
                 recipients = self.contact_ids
             
             # Filter contacts with phone numbers
-            valid_recipients = recipients.filtered(lambda c: c.mobile or c.phone)
+            valid_recipients = recipients.filtered(lambda c:  c.phone)
             recipient_type_name = 'contact'
             
         else:  # employees
@@ -116,7 +117,7 @@ class SmsUnifiedWizard(models.TransientModel):
         for recipient in valid_recipients:
             # Get phone number based on recipient type
             if self.recipient_type == 'contacts':
-                phone = recipient.mobile or recipient.phone
+                phone =  recipient.phone
             else:  # employees
                 phone = recipient.mobile_phone or recipient.work_phone
             
