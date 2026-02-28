@@ -11,7 +11,7 @@ class SmsConfig(models.Model):
     name = fields.Char('Configuration Name', required=True, default='SMS Configuration')
     api_key = fields.Char('API Key', required=True, help='Bearer token for SMS API authentication')
     sender_id = fields.Char('Sender ID', required=True, help='SMS sender identification')
-    api_url = fields.Char('API URL', required=True, default='https://roycebulksms.com/api/sendmessage')
+    api_url = fields.Char('API URL', required=True, default='https://roycetalk.com/api/v1/sms-api/send/')
     active = fields.Boolean('Active', default=True)
     company_id = fields.Many2one('res.company', 'Company', default=lambda self: self.env.company)
 

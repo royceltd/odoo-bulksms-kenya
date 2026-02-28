@@ -15,10 +15,10 @@
         * SMS delivery logging and tracking
         * User permissions (SMS Admin, SMS User)
         
-        API Integration: https://roycebulksms.com/send-message
+        API Integration: https://roycetalk.com/send-message
     ''',
-    'author': 'Your Company',
-    'website': 'https://www.yourcompany.com',
+    'author': 'Royce Technologies Limited',
+    'website': 'https://www.roycetechnologies.co.ke',
     'depends': ['base', 'contacts', 'hr'],
     'data': [
         'security/sms_security.xml',

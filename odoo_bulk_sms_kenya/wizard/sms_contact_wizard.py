@@ -12,7 +12,7 @@ class SmsContactWizard(models.TransientModel):
     ], 'Send To', default='all', required=True)
     
     contact_ids = fields.Many2many('res.partner', string='Select Contacts')
-    template_id = fields.Many2one('sms.template', 'SMS Template')
+    template_id = fields.Many2one('royce.sms.royce.template', 'SMS Template')
     custom_message = fields.Text('Custom Message')
     message_preview = fields.Text('Message Preview', readonly=True)
     
@@ -68,7 +68,7 @@ class SmsContactWizard(models.TransientModel):
         # Send SMS to each contact
         success_count = 0
         failed_count = 0
-        sms_log = self.env['sms.log']
+        sms_log = self.env['royce.sms.log']
 
         for contact in valid_contacts:
             # Get phone number (prefer mobile over phone)
@@ -108,4 +108,3 @@ class SmsContactWizard(models.TransientModel):
                 'sticky': False,
             }
         }
-

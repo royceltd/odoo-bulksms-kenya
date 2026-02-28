@@ -67,11 +67,11 @@
                   action="action_sms_template"
                   sequence="20"/>
 
-        <menuitem id="menu_sms_send_unified"
+        <!-- <menuitem id="menu_sms_send_unified"
           name="Send SMS"
           parent="menu_bulk_sms_main"
           action="action_sms_unified_wizard"
-          sequence="10"/>
+          sequence="10"/> -->
 
         <!-- Send SMS Submenu -->
         <menuitem id="menu_bulk_sms_send"
@@ -80,7 +80,7 @@
                   sequence="20"
                   groups="odoo_bulk_sms_kenya.group_sms_user"/>
 
-        <!-- <menuitem id="menu_sms_send_contacts"
+        <menuitem id="menu_sms_send_contacts"
                   name="Send to Contacts"
                   parent="menu_bulk_sms_send"
                   action="action_sms_contact_wizard"
@@ -90,7 +90,7 @@
                   name="Send to Employees"
                   parent="menu_bulk_sms_send"
                   action="action_sms_employee_wizard"
-                  sequence="20"/> -->
+                  sequence="20"/>
 
         <!-- Reports Submenu -->
         <menuitem id="menu_bulk_sms_reports"
