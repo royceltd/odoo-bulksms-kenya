@@ -17,8 +17,8 @@
         
         API Integration: https://roycetalk.com/send-message
     ''',
-    'author': 'Royce Technologies Limited',
-    'website': 'https://www.roycetechnologies.co.ke',
+   'author': 'Royce Technologies Limited',
+    'website': 'https://www.roycetalk.com',
     'depends': ['base', 'contacts', 'hr'],
     'data': [
         'security/sms_security.xml',
