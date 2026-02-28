@@ -1,51 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
 
         <!-- Contact SMS Wizard Form View -->
         <record id="view_sms_contact_wizard_form" model="ir.ui.view">
-    <field name="name">royce.sms.contact.wizard.form</field>
-    <field name="model">royce.sms.contact.wizard</field>
-    <field name="arch" type="xml">
-        <form string="Send SMS to Contacts">
-            <sheet>
-                <div class="oe_title">
-                    <h1>Send SMS to Contacts</h1>
-                </div>
-                
-                <group>
-                    <group name="selection" string="Contact Selection">
-                        <field name="selection_type" widget="radio"/>
-                        <field name="contact_ids" widget="many2many_tags" 
-                               invisible="selection_type != 'selected'" 
-                               required="selection_type == 'selected'"/>
-                    </group>
-                    <group name="statistics" string="Statistics">
-                        <field name="total_contacts" readonly="1"/>
-                        <field name="contacts_with_phone" readonly="1"/>
-                    </group>
-                </group>
+            <field name="name">royce.sms.contact.wizard.form</field>
+            <field name="model">royce.sms.contact.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Send SMS to Contacts">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>Send SMS to Contacts</h1>
+                        </div>
+                        
+                        <!-- Step 1: Selection -->
+                        <group string="Step 1: Select Recipients" name="selection">
+                            <field name="selection_type" widget="radio"/>
+                            <field name="contact_ids" 
+                                   widget="many2many_tags" 
+                                   invisible="selection_type != 'selected'" 
+                                   required="selection_type == 'selected'"
+                                   placeholder="Search contacts..."/>
+                        </group>
 
-                <group string="Message">
-                    <field name="template_id" placeholder="Select a template or enter custom message"/>
-                    <field name="custom_message" widget="text" 
-                           invisible="template_id != False"/>
-                </group>
+                        <!-- Statistics Summary -->
+                        <group string="Recipients Summary" name="statistics">
+                            <field name="total_contacts" readonly="1" label="Total Contacts"/>
+                            <field name="contacts_with_phone" readonly="1" label="With Phone Numbers"/>
+                        </group>
 
-                <group string="Preview" invisible="message_preview == False">
-                    <field name="message_preview" widget="text" readonly="1"/>
-                </group>
+                        <!-- Step 2: Message -->
+                        <group string="Step 2: Compose Message" name="message">
+                            <field name="template_id" 
+                                   nolabel="1"
+                                   placeholder="Select a template..."/>
+                            <field name="custom_message" 
+                                   widget="textarea"
+                                   invisible="template_id != False"
+                                   placeholder="Or enter your custom message here..."
+                                   nolabel="1"/>
+                        </group>
 
-                <div class="alert alert-info" role="alert">
-                    <strong>Note:</strong> Only contacts with valid phone numbers will receive SMS messages.
-                </div>
-            </sheet>
-            <footer>
-                <button name="send_sms" type="object" string="Send SMS" class="btn-primary"/>
-                <button string="Cancel" class="btn-secondary" special="cancel"/>
-            </footer>
-        </form>
-    </field>
-</record>
+                        <!-- Step 3: Preview -->
+                        <group string="Step 3: Preview" 
+                               invisible="not message_preview" 
+                               name="preview">
+                            <field name="message_preview" 
+                                   widget="text" 
+                                   readonly="1"
+                                   nolabel="1"/>
+                        </group>
+
+                        <!-- Info Alert -->
+                        <div class="alert alert-info" role="alert">
+                            <strong>Note:</strong> Only contacts with valid phone numbers will receive SMS messages.
+                        </div>
+                    </sheet>
+                    <footer>
+                        <button name="send_sms" 
+                                type="object" 
+                                string="Send SMS" 
+                                class="btn-primary"/>
+                        <button string="Cancel" 
+                                class="btn-secondary" 
+                                special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
 
         <!-- Contact SMS Wizard Action -->
         <record id="action_sms_contact_wizard" model="ir.actions.act_window">
