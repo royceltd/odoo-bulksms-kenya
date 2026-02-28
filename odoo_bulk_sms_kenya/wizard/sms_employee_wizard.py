@@ -12,7 +12,7 @@ class SmsEmployeeWizard(models.TransientModel):
     ], 'Send To', default='all', required=True)
     
     employee_ids = fields.Many2many('hr.employee', string='Select Employees')
-    template_id = fields.Many2one('sms.template', 'SMS Template')
+    template_id = fields.Many2one('royce.sms.royce.template', 'SMS Template')
     custom_message = fields.Text('Custom Message')
     message_preview = fields.Text('Message Preview', readonly=True)
     
@@ -68,7 +68,7 @@ class SmsEmployeeWizard(models.TransientModel):
         # Send SMS to each employee
         success_count = 0
         failed_count = 0
-        sms_log = self.env['sms.log']
+        sms_log = self.env['royce.sms.log']
 
         for employee in valid_employees:
             # Get phone number (prefer mobile over work phone)

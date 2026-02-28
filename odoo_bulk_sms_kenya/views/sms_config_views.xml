@@ -33,13 +33,13 @@
                         <!-- FIXED: Changed oe_title to o_title -->
                         <div class="o_title">
                             <h1>
-                                <field name="name" placeholder="Configuration Name"/>
+                                <field name="name" placeholder="SMS settings"/>
                             </h1>
                         </div>
                         <group>
                             <group name="api_settings" string="API Settings">
-                                <field name="api_url"/>
-                                <field name="sender_id"/>
+                                <field name="api_url" readonly="1"/>
+                                <field name="sender_id" placeholder="RoyceLTD"/>
                                 <field name="api_key" password="True"/>
                             </group>
                             <group name="other_settings" string="Other Settings">
