@@ -33,6 +33,8 @@ class SmsLog(models.Model):
         ('supplier', 'Supplier'),
         ('notification', 'Notification'),
         ('custom', 'Custom'),
+        ('custom_bulk','custom_bulk')
+
     ], 'Recipient Type', default='custom', required=True)
     recipient_id = fields.Integer('Recipient ID', required=False, help="ID of the recipient in the corresponding model (e.g., res.partner for contacts/customers/suppliers)")
     company_id = fields.Many2one('res.company', 'Company', default=lambda self: self.env.company)

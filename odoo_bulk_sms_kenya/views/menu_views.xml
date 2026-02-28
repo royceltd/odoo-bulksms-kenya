@@ -34,7 +34,7 @@
             <field name="view_mode">form</field>
             <field name="target">new</field>
         </record>
-        <!-- Unified SMS Wizard Action -->
+
         <record id="action_sms_unified_wizard" model="ir.actions.act_window">
             <field name="name">Send Bulk SMS</field>
             <field name="res_model">royce.sms.unified.wizard</field>
@@ -42,6 +42,15 @@
             <field name="target">new</field>
             <field name="context">{}</field>
         </record>
+
+       <record id="action_sms_bulk_paste_wizard" model="ir.actions.act_window">
+            <field name="name">Send SMS to Custom Numbers</field>
+            <field name="res_model">royce.sms.bulk.paste.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Main Menu -->
 
         <!-- Main Menu -->
         <menuitem id="menu_bulk_sms_main"
@@ -67,17 +76,11 @@
                   action="action_sms_template"
                   sequence="20"/>
 
-        <!-- <menuitem id="menu_sms_send_unified"
-          name="Send SMS"
-          parent="menu_bulk_sms_main"
-          action="action_sms_unified_wizard"
-          sequence="10"/> -->
-
         <!-- Send SMS Submenu -->
         <menuitem id="menu_bulk_sms_send"
                   name="Send SMS"
                   parent="menu_bulk_sms_main"
-                  sequence="20"
+                  sequence="5"
                   groups="odoo_bulk_sms_kenya.group_sms_user"/>
 
         <menuitem id="menu_sms_send_contacts"
@@ -92,11 +95,18 @@
                   action="action_sms_employee_wizard"
                   sequence="20"/>
 
+        <menuitem id="menu_sms_send_bulk_paste"
+                  name="Send to Custom Numbers"
+                  parent="menu_bulk_sms_send"
+                  action="action_sms_bulk_paste_wizard"
+                  sequence="30"
+                  />
+
         <!-- Reports Submenu -->
         <menuitem id="menu_bulk_sms_reports"
                   name="Reports"
                   parent="menu_bulk_sms_main"
-                  sequence="30"
+                  sequence="2"
                   groups="odoo_bulk_sms_kenya.group_sms_user"/>
 
         <menuitem id="menu_sms_log"

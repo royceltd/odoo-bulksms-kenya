@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- SMS Bulk Paste Wizard Form View -->
+        <record id="view_sms_bulk_paste_wizard_form" model="ir.ui.view">
+            <field name="name">royce.sms.bulk.paste.wizard.form</field>
+            <field name="model">royce.sms.bulk.paste.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Send SMS to Custom Numbers">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>Send SMS to Custom Phone Numbers</h1>
+                            <p class="oe_grey">Paste phone numbers one per line, then compose your message</p>
+                        </div>
+
+                        <!-- Step 1: Phone Numbers -->
+                        <group string="Step 1: Enter Phone Numbers" name="phone_numbers">
+                            <field name="phone_numbers_text" 
+                                   widget="textarea"
+                                   nolabel="1"
+                                   placeholder="Paste phone numbers here, one per line&#10;Examples:&#10;254712345678&#10;0712345678&#10;+254712345678"/>
+                        </group>
+
+                        <!-- Statistics -->
+                        <group string="Phone Numbers Summary" name="statistics">
+                            <field name="total_numbers" readonly="1" label="Total Numbers Pasted"/>
+                            <field name="valid_numbers" readonly="1" label="Valid Numbers"/>
+                            <field name="invalid_count" readonly="1" label="Invalid Numbers"/>
+                        </group>
+
+                        <!-- Step 2: Message -->
+                        <group string="Step 2: Compose Message" name="message">
+                            <field name="template_id" 
+                                   nolabel="1"
+                                   placeholder="Select a template..."/>
+                            <field name="custom_message" 
+                                   widget="textarea"
+                                   invisible="template_id != False"
+                                   placeholder="Or enter your custom message here..."
+                                   nolabel="1"/>
+                        </group>
+
+                        <!-- Step 3: Preview -->
+                        <group string="Step 3: Preview Message" 
+                               invisible="not message_preview" 
+                               name="preview">
+                            <field name="message_preview" 
+                                   widget="text" 
+                                   readonly="1"
+                                   nolabel="1"/>
+                        </group>
+
+                        <!-- Info Alert -->
+                        <div class="alert alert-info" role="alert">
+                            <strong>Note:</strong> Sender ID will be picked from your active SMS Configuration. Only valid phone numbers will receive SMS.
+                        </div>
+                    </sheet>
+                    <footer>
+                        <button name="send_sms" 
+                                type="object" 
+                                string="Send SMS to All Numbers" 
+                                class="btn-primary"/>
+                        <button string="Cancel" 
+                                class="btn-secondary" 
+                                special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

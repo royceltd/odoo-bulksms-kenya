@@ -24,12 +24,14 @@
         'security/sms_security.xml',
         'security/ir.model.access.csv',
         'wizard/sms_unified_wizard_views.xml',  # Add this line
-        'views/menu_views.xml',
         'views/sms_config_views.xml',
         'views/sms_template_views.xml',
+        'wizard/sms_bulk_paste_wizard_views.xml',
         'views/sms_log_views.xml',
         'wizard/sms_contact_wizard_views.xml',
         'wizard/sms_employee_wizard_views.xml',
+        'views/menu_views.xml',
+        
         
     ],
     'installable': True,

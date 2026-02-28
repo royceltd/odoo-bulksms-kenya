@@ -7,4 +7,5 @@ access_royce_sms_log_admin,sms.log.admin,model_royce_sms_log,group_sms_admin,1,1
 access_royce_sms_log_user,sms.log.user,model_royce_sms_log,group_sms_user,1,0,0,0
 access_royce_sms_contact_wizard_user,sms.contact.wizard.user,model_royce_sms_contact_wizard,group_sms_user,1,1,1,1
 access_royce_sms_employee_wizard_user,sms.employee.wizard.user,model_royce_sms_employee_wizard,group_sms_user,1,1,1,1
-access_royce_sms_unified_wizard_user,sms.unified.wizard.user,model_royce_sms_unified_wizard,group_sms_user,1,1,1,1
+access_royce_sms_unified_wizard_user,sms.unified.wizard.user,model_royce_sms_unified_wizard,group_sms_user,1,1,1,
+access_royce_sms_bulk_paste_wizard_user,sms.bulk.paste.wizard.user,model_royce_sms_bulk_paste_wizard,group_sms_user,1,1,1,1
